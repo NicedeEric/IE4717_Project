@@ -56,6 +56,7 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
         top: 100px;
         height: 2000px;
         width: 100%;
+        background-color: #eee;
         z-index: 0;
     }
 </style>
