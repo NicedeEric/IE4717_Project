@@ -15,6 +15,7 @@
         margin: 10px;
         background-color: #fff;
         border: 1px solid #00b0ff;
+        cursor: pointer;
     }
 
     .singleProduct:hover {
