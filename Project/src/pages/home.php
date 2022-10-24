@@ -52,15 +52,14 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
 </head>
 <style>
     .homeBody {
-        position: relative;
-        top: 100px;
+        margin: 100px auto;
         height: 2000px;
-        width: 100%;
+        width: 80%;
         background-color: #eee;
         z-index: 0;
     }
 </style>
-<body>
+<body style="min-width: 1000px">
     <!-- Header -->
     <?php
         includeWithVariables('./header.php', array('userId' => $_SESSION["userId"]));
@@ -68,13 +67,22 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
     ?>
     <div class="homeBody">
         <?php
-            include('./single_product.php');
-            include('./single_product.php');
-        ?>    
+            include('./sidebar.php')
+        ?>
+        <div class="productListing">
+            <?php
+                include('./single_product.php');
+                include('./single_product.php');
+                include('./single_product.php');
+                include('./single_product.php');
+                include('./single_product.php');
+                include('./single_product.php');
+            ?>       
+        </div>
     </div>
     <!-- Footer -->
     <?php
-        include_once('./footer.php')
+        include('./footer.php')
     ?>
 </body>
 </html>
