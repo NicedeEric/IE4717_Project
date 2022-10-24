@@ -16,7 +16,7 @@
         position: relative;
         border-top: 2px solid #00b0ff;
         height: 150px;
-        background-color: #fefefe;
+        background-color: #fbfbfb;
     }
     .rightReserved {
         position: absolute;

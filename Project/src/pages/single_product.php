@@ -11,7 +11,7 @@
 <style>
     .singleProduct {
         display: inline-block;
-        width: 20%;
+        width: 22.8%;
         margin: 10px;
         background-color: #fff;
         border: 1px solid #00b0ff;
@@ -19,7 +19,7 @@
     }
 
     .singleProduct:hover {
-        box-shadow: 5px 5px #00b0ff;
+        box-shadow: 2px 2px 2px #00b0ff;
     }
     .productImg img {
         width: 100%;
