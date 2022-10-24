@@ -58,17 +58,17 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
         background-color: #eee;
         z-index: 0;
     }
-    body {
-        min-width:1000px;
-    }
 </style>
-<body>
+<body style="min-width: 1000px">
     <!-- Header -->
     <?php
         includeWithVariables('./header.php', array('userId' => $_SESSION["userId"]));
         // include_once('./header.php');
     ?>
     <div class="homeBody">
+        <?php
+            include('./sidebar.php')
+        ?>
         <div class="productListing">
             <?php
                 include('./single_product.php');

@@ -13,6 +13,7 @@
         position: fixed;
         top: 0;
         width: 100%;
+        min-width: 1000px;
         height: 100px;
         margin: 0 auto;
         z-index: 1;
@@ -59,8 +60,11 @@
     }
     .searchBox {
         position: absolute;
-        width: 85%;
+        width: 75%;
         left: 18%;
+    }
+    .searchButton {
+        width: 100%;
     }
     .cart {
         position: absolute;
@@ -75,6 +79,13 @@
         top: 8px;
         height: 35px;
         width: 70%;
+    }
+    .searchButton input {
+        position: absolute;
+        top: 8px;
+        left: 71%;
+        width: 4%; */
+        height: 200%;
     }
 </style>
 <body>
@@ -101,7 +112,12 @@
                 <a href="home.php"><img src="../img/Lawrence_logo.png" alt="Lawrence's store"></a>    
             </div>
             <div class="searchBox">
-                <input type="text">
+                <form action="handle_search.php" method="GET">
+                    <input type="text" name="searchText">
+                    <div class="searchButton">
+                        <input type="image" src="../img/search_button.png" alt="search"> 
+                    </div>
+                </form>
             </div>
             <div class="cart">
                 <a href="cart.php"><img src="../img/cart.png" alt="shopping cart logo"></a>
