@@ -27,7 +27,7 @@
 <body>
     <div class="sidebar">
         <div class="categoryFilter">
-            All Categories 
+            All Categories LOL
             <hr>
             <ul class="categories">
                 <li><a href="#">Mobile Phone</a></li>
