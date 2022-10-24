@@ -55,6 +55,7 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
         position: relative;
         top: 100px;
         height: 2000px;
+        width: 100%;
         z-index: 0;
     }
 </style>
@@ -65,7 +66,10 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
         // include_once('./header.php');
     ?>
     <div class="homeBody">
-        LOL
+        <?php
+            include('./single_product.php');
+            include('./single_product.php');
+        ?>    
     </div>
     <!-- Footer -->
     <?php
