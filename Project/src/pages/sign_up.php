@@ -25,7 +25,7 @@
         <input type="text" name="address"><br><br>
         <input type="submit" value="Submit"><br><br>
     </form>
-    <form action="login.php">
+    <form action="sign_in.php">
         <input type="submit" value="Go to Login" />
     </form>
     <br><br>

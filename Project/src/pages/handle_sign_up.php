@@ -14,7 +14,7 @@
     <h1>Your sign up status<br></h1>
 
     <?php
-        include 'dbconnect.php';
+        include '../dbconnect.php';
         if (isset($_POST['submit'])) {
             if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) ||
                 empty($_POST['password2']) || empty($_POST['address'])) {
@@ -37,7 +37,7 @@
         }
 
         $password = md5($password);
-        $sql = "insert into User (address, username, email, password) values ('$address', '$username', '$email', '$password');";
+        $sql = "insert into Users (address, username, email, password) values ('$address', '$username', '$email', '$password');";
         $result = $db->query($sql);
 
         if (!$result) {
@@ -49,8 +49,8 @@
         }
     ?>
 
-    <br>
-    <form action="login.php">
+    <br><br>
+    <form action="sign_in.php">
         <input type="submit" value="Go to Login" />
     </form>
     <br><br>

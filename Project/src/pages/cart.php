@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['valid_user'])) {
-        header('location: login.php?' . SID);
+        header('location: sign_in.php?' . SID);
         exit();
     }
     if (!isset($_SESSION['cart'])) {
@@ -40,7 +40,7 @@
             <?php
                 $total = 0;
                 for ($i = 0; $i < count($_SESSION['cart']); $i++) {
-                    $query = "select name, price from Product where id = " . $_SESSION['cart'][$i][0];
+                    $query = "select name, price from Products where id = " . $_SESSION['cart'][$i][0];
                     $result = $db->query($query);
                     $row = $result->fetch_assoc();
                     $name = $row['name'];

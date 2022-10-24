@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['valid_user'])) {
-        header('location: login.php?' . SID);
+        header('location: sign_in.php?' . SID);
         exit();
     }
 ?>
@@ -20,7 +20,7 @@
 </header>
 <div class="content">
     <h1>Please update your profile here<br></h1>
-    <form action="profile_update.php" method='post'>
+    <form action="handle_profile_setting.php" method='post'>
         <label for="username">New Username:</label><br>
         <input type="text" name="username"><br><br>
         <label for="email">New Email:</label><br>

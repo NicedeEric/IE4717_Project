@@ -15,10 +15,10 @@
 
     <?php
         session_start();
-        include 'dbconnect.php';
+        include '../dbconnect.php';
         $id = $_SESSION['valid_user'];
 
-        $sql = "select email from User where id = '$id';";
+        $sql = "select email from Users where id = '$id';";
         $result = $db->query($sql);
         $row = $result->fetch_assoc();
         $email = $row['email'];
