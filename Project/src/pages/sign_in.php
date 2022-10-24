@@ -4,18 +4,19 @@
         exit();
     }
     
-    include 'dbconnect.php';
+    include '../dbconnect.php';
     session_start();
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $password = md5($password);
-        $query = "select id from User where username = '$username' and password = '$password';";
+        $query = "select id from Users where username = '$username' and password = '$password';";
         $result = $db->query($query);
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $_SESSION['valid_user'] = $row['id'];
+            header('location: home.php?' . SID);
         }
         $db->close();
     }
@@ -40,7 +41,7 @@
             echo "Could not log you in. Please try again. <br>";
         }
     ?>
-    <form method='post'>
+    <form action="sign_in.php" method='post'>
         <label for="username">Username:</label><br>
         <input type="text" name="username"><br><br>
         <!-- <label for="email">Email:</label><br>

@@ -15,7 +15,7 @@
 
     <?php
         session_start();
-        include 'dbconnect.php';
+        include '../dbconnect.php';
         if (isset($_POST['submit'])) {
             if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['password']) &&
                 empty($_POST['password2']) && empty($_POST['address'])) {
@@ -41,28 +41,28 @@
 
         if (!empty($password)) {
             $password = md5($password);
-            $sql = "update User set password = '$password' where id = '$id';";
+            $sql = "update Users set password = '$password' where id = '$id';";
             $result = $db->query($sql);
             if (!$result) {
                 $fail = TRUE;}
         }
 
         if (!empty($username)) {
-            $sql = "update User set username = '$username' where id = '$id';";
+            $sql = "update Users set username = '$username' where id = '$id';";
             $result = $db->query($sql);
             if (!$result) {
                 $fail = TRUE;}
         }
 
         if (!empty($email)) {
-            $sql = "update User set email = '$email' where id = '$id';";
+            $sql = "update Users set email = '$email' where id = '$id';";
             $result = $db->query($sql);
             if (!$result) {
                 $fail = TRUE;}
         }
 
         if (!empty($address)) {
-            $sql = "update User set address = '$address' where id = '$id';";
+            $sql = "update Users set address = '$address' where id = '$id';";
             $result = $db->query($sql);
             if (!$result) {
                 $fail = TRUE;}

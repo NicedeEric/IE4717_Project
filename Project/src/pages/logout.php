@@ -18,7 +18,7 @@
 </header>
 <div class="content">
     <h1>You have logged out.<br></h1>
-    <form action="login.php">
+    <form action="sign_in.php">
         <input type="submit" value="Go to Login" />
     </form>
     <br><br>

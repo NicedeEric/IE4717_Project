@@ -12,7 +12,7 @@
 </header>
 <div class="content">
     <h1>You need to pay <?php echo number_format($_GET['price'], 2); ?><br></h1>
-    <form action="email.php">
+    <form action="handle_payment.php">
         <input type="submit" value="Make payment" />
     </form>
     <br>
