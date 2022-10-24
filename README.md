@@ -1,1 +1,3 @@
-# IE4717_Project
+# This is IE4717_Project
+# Lawrence's Electronic Shop
+
