@@ -11,15 +11,16 @@
 <style>
     .singleProduct {
         display: inline-block;
-        width: 22.8%;
+        width: 22.9%;
         margin: 10px;
         background-color: #fff;
-        border: 1px solid #00b0ff;
         cursor: pointer;
+        box-shadow: 0px 15px 10px #e8e8e8;
     }
 
     .singleProduct:hover {
-        box-shadow: 2px 2px 2px #00b0ff;
+        border: 1px solid #00b0ff;
+        box-shadow: 1px 1px #00b0ff;
     }
     .productImg img {
         width: 100%;
@@ -27,7 +28,7 @@
     }
     .productName {
         margin-left: 2%;
-        width: 80%;
+        width: 60%;
         font-size: 18px;
         overflow:hidden !important;
         text-overflow: ellipsis;
@@ -50,7 +51,7 @@
             <img src="../img/cart.png" alt="">
         </div>
         <div class="productName">
-            Product Name is asdfsdfsdfasdfsofbsfjasosn
+            Product Name is asdfsdfsdfasdfsofbsfjasosnasdasasdasdasdasda 
         </div>
         <div class="productInfo">
             <span class="price">

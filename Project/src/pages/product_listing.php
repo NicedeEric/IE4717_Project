@@ -59,7 +59,7 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
         z-index: 0;
     }
 </style>
-<body style="min-width: 1000px">
+<body style="min-width: 1400px">
     <!-- Header -->
     <?php
         includeWithVariables('./header.php', array('userId' => $_SESSION["userId"]));

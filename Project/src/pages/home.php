@@ -58,7 +58,7 @@ function includeWithVariables($filePath, $variables = array(), $print = true) {
         z-index: 0;
     }
     body {
-        min-width:1000px;
+        min-width:1400px;
     }
     .categoryList {
         height: 250px;
@@ -122,22 +122,22 @@ function includeWithVariables($filePath, $variables = array(), $print = true) {
                         <img src="../img/mobilePhone.png" alt="mobilePhone">
                         <p>Mobile Phone</p>
                     </li><li>
-                        <img src="../img/mobilePhone.png" alt="mobilePhone">
+                        <img src="../img/laptop.png" alt="mobilePhone">
                         <p>Laptop</p>
                     </li><li>
-                        <img src="../img/mobilePhone.png" alt="mobilePhone">
+                        <img src="../img/tablet.png" alt="mobilePhone">
                         <p>Tablet</p>
                     </li><li>
-                        <img src="../img/mobilePhone.png" alt="mobilePhone">
+                        <img src="../img/earphone.png" alt="mobilePhone">
                         <p>Earphone</p>
                     </li><li>
-                        <img src="../img/mobilePhone.png" alt="mobilePhone">
+                        <img src="../img/monitor.png" alt="mobilePhone">
                         <p>Monitor</p>
                     </li><li>
-                        <img src="../img/mobilePhone.png" alt="mobilePhone">
+                        <img src="../img/console.png" alt="mobilePhone">
                         <p>Game Console</p>
                     </li><li>
-                        <img src="../img/mobilePhone.png" alt="mobilePhone">
+                        <img src="../img/camera.png" alt="mobilePhone">
                         <p>Camera</p>
                     </li>
                 </ul>
