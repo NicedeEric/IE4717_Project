@@ -24,15 +24,17 @@
         <label for="username">New Username:</label><br>
         <input type="text" name="username"><br><br>
         <label for="email">New Email:</label><br>
-        <input type="email" name="email"><br><br>
+        <input type="email" name="email" id="email"><br><br>
         <label for="password">New Password:</label><br>
-        <input type="password" name="password"><br><br>
+        <input type="password" name="password" id="password"><br><br>
         <label for="password2">New Password Confirmation:</label><br>
         <input type="password" name="password2"><br><br>
         <label for="address">New Address:</label><br>
         <input type="text" name="address"><br><br>
         <input type="submit" value="Submit"><br>
     </form>
+    <script type = "text/javascript" src = "../JS/form_validator.js">
+    </script>
     <br><br>
     <form action="home.php">
         <input type="submit" value="Back to Homepage" />
