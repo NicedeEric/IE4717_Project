@@ -14,8 +14,9 @@
     }
     footer {
         position: relative;
+        border-top: 2px solid #00b0ff;
         height: 150px;
-        background-color: #eee;
+        background-color: #fefefe;
     }
     .rightReserved {
         position: absolute;

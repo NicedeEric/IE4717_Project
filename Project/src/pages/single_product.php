@@ -18,7 +18,6 @@
     }
 
     .singleProduct:hover {
-        padding-top: 2px;
         box-shadow: 5px 5px #00b0ff;
     }
     .productImg img {
@@ -26,16 +25,21 @@
         height: 10%;
     }
     .productName {
-        font-size: 20px;
+        margin-left: 2%;
+        width: 80%;
+        font-size: 18px;
+        overflow:hidden !important;
+        text-overflow: ellipsis;
     }
     .price {
         margin-left: 2%;
-        font-size: 24px;
+        font-size: 20px;
         color: #00b0ff;
     }
     .category {
-        margin-left: 70%;
-        font-size: 20px;
+        float: right;
+        margin-right: 2%;
+        font-size: 15px;
         color: #ccc;
     }
 </style>
@@ -45,7 +49,7 @@
             <img src="../img/cart.png" alt="">
         </div>
         <div class="productName">
-            Product Name
+            Product Name is asdfsdfsdfasdfsofbsfjasosn
         </div>
         <div class="productInfo">
             <span class="price">
