@@ -71,12 +71,11 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
         ?>
         <div class="productListing">
             <?php
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
+                $num_results = $result->num_rows;
+                for ($i=0; $i <$num_results; $i++) {
+                    $row = $result->fetch_assoc();
+                    includeWithVariables("./single_product.php", array("productRow" => $row));
+                }
             ?>       
         </div>
     </div>

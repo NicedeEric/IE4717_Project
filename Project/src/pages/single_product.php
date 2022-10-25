@@ -48,17 +48,17 @@
 <body>
     <div class="singleProduct">
         <div class="productImg">
-            <img src="../img/cart.png" alt="">
+            <?php echo "<img src='".$productRow["img_url"]."'>"?>
         </div>
         <div class="productName">
-            Product Name is asdfsdfsdfasdfsofbsfjasosnasdasasdasdasdasda 
+            <?php echo $productRow["name"];?>
         </div>
         <div class="productInfo">
             <span class="price">
-                $product price
+                $<?php echo $productRow["price"];?>
             </span>
             <span class="category">
-                category
+                <?php echo $productRow["category"];?>
             </span>
         </div>
     </div>
