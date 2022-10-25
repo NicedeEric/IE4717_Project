@@ -113,7 +113,9 @@
             </div>
             <div class="searchBox">
                 <form action="handle_search.php" method="GET">
-                    <input type="text" name="searchText">
+                    <?php 
+                        echo '<input type="text" name="searchText" value='.$searchedText.'>';
+                    ?>
                     <div class="searchButton">
                         <input type="image" src="../img/search_button.png" alt="search"> 
                     </div>

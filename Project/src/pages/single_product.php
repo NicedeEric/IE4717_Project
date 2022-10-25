@@ -12,6 +12,7 @@
     .singleProduct {
         display: inline-block;
         width: 22.9%;
+        height: 20%;
         margin: 10px;
         background-color: #fff;
         cursor: pointer;
@@ -29,8 +30,10 @@
     .productName {
         margin-left: 2%;
         width: 60%;
+        height: 30px;
         font-size: 18px;
-        overflow:hidden !important;
+        white-space: nowrap; 
+        overflow:hidden;
         text-overflow: ellipsis;
     }
     .price {
