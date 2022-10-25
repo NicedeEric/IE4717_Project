@@ -1,47 +1,3 @@
-<?php
-include "dbconnect.php";
-session_start();
-$_SESSION['userId'] = "none";
-if (isset($_POST['userId']) && isset($_POST['password'])) {
-  // if the user has just tried to log in
-    $userId = $_POST['userId'];
-    $password = $_POST['password'];
-    // $password = md5($password);
-    // $query = 'select * from users '
-    //     ."where username='$userid' "
-    //     ." and password='$password'";
-    // $result = $dbcnx->query($query);
-    // if ($result->num_rows >0 ) {
-    //     // if they are in the database register the user id
-    //     $_SESSION['userId'] = $userid;    
-    // }
-    // $dbcnx->close();
-    $_SESSION['userId'] = $userid;
-}
-
-function includeWithVariables($filePath, $variables = array(), $print = true)
-{
-    $output = NULL;
-    if(file_exists($filePath)){
-        // Extract the variables to a local namespace
-        extract($variables);
-
-        // Start output buffering
-        ob_start();
-
-        // Include the template file
-        include $filePath;
-
-        // End buffering and return its contents
-        $output = ob_get_clean();
-    }
-    if ($print) {
-        print $output;
-    }
-    return $output;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,8 +18,7 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
 <body style="min-width: 1400px">
     <!-- Header -->
     <?php
-        includeWithVariables('./header.php', array('userId' => $_SESSION["userId"]));
-        // include_once('./header.php');
+        includeWithVariables('./header.php', array('searchedText' => $searchedText));
     ?>
     <div class="homeBody">
         <?php
@@ -71,12 +26,14 @@ function includeWithVariables($filePath, $variables = array(), $print = true)
         ?>
         <div class="productListing">
             <?php
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
+                $num_products = sizeof($product_arr);
+                if ($num_products==0) {
+                    echo "Seems like we don't have the product you want, please change the keyword and try again!";
+                }
+                for ($i=0; $i <$num_products; $i++) {
+                    $productRow = $product_arr[$i];
+                    includeWithVariables("./single_product.php", array("productRow" => $productRow));
+                }
             ?>       
         </div>
     </div>

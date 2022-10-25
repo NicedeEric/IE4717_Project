@@ -12,6 +12,7 @@
     .singleProduct {
         display: inline-block;
         width: 22.9%;
+        height: 20%;
         margin: 10px;
         background-color: #fff;
         cursor: pointer;
@@ -29,8 +30,10 @@
     .productName {
         margin-left: 2%;
         width: 60%;
+        height: 30px;
         font-size: 18px;
-        overflow:hidden !important;
+        white-space: nowrap; 
+        overflow:hidden;
         text-overflow: ellipsis;
     }
     .price {
@@ -48,17 +51,17 @@
 <body>
     <div class="singleProduct">
         <div class="productImg">
-            <img src="../img/cart.png" alt="">
+            <?php echo "<img src='".$productRow["img_url"]."'>"?>
         </div>
         <div class="productName">
-            Product Name is asdfsdfsdfasdfsofbsfjasosnasdasasdasdasdasda 
+            <?php echo $productRow["name"];?>
         </div>
         <div class="productInfo">
             <span class="price">
-                $product price
+                $<?php echo $productRow["price"];?>
             </span>
             <span class="category">
-                category
+                <?php echo $productRow["category"];?>
             </span>
         </div>
     </div>

@@ -42,9 +42,9 @@ if (isset($_POST['userId']) && isset($_POST['password'])) {
         return $output;
     }
     include_once('../dbconnect.php');
-    $searchedText = $_GET["searchText"];
+    $categoryType = $_GET["categoryType"];
     // echo $searchedText;
-    $query = "select * from Products where name like '%".$searchedText."%';";
+    $query = "select * from Products where category = '".$categoryType."';";
     $result = $db->query($query);
     $num_results = $result->num_rows;
     $product_arr = array();

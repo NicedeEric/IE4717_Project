@@ -17,27 +17,30 @@
         }
         .categories li {
             list-style: none;
-        }
-        a {
-            text-decoration: none;
-            color: #000;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <div class="categoryFilter">
-            All Categories LOL
+            All Categories
             <hr>
-            <ul class="categories">
-                <li><a href="#">Mobile Phone</a></li>
-                <li><a href="#">Laptop</a></li>
-                <li><a href="#">Earphone</a></li>
-                <li><a href="#">Pad</a></li>
-            </ul>
+            <form action="handle_categorize.php" method="GET" id="categorizeForm">
+                <ul class="categories">
+                    <li id="Mobile Phone">Mobile Phone</li>
+                    <li id="Laptop">Laptop</li>
+                    <li id="Tablet">Tablet</li>
+                    <li id="Earphone">Earphone</li>
+                    <li id="Monitor">Monitor</li>
+                    <li id="Game Console">Game Console</li>
+                    <li id="Camera">Camera</li>
+                    <input type="hidden" name="categoryType" id="categoryType">
+                </ul>
+            </form>
         </div>
         <hr>
-        <div class="searchFilter">
+        <div class="priceFilter">
             Price Range
             <div>
             <input type="text" size="10"> - 
@@ -47,4 +50,16 @@
         </div>
     </div>
 </body>
+    <script>
+        var liElements = document.getElementsByTagName('li');
+        var categorizeForm = document.getElementById("categorizeForm");
+        var categoryTypeInput = document.getElementById("categoryType");
+        for (let i=0;i<liElements.length;i++) {
+            let li = liElements[i];
+            li.onclick = function () {
+                categoryTypeInput.value = li.id;
+                categorizeForm.submit();
+            }
+        }
+    </script>
 </html>

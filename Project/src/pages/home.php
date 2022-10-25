@@ -150,12 +150,14 @@ function includeWithVariables($filePath, $variables = array(), $print = true) {
         </div>
         <div class="productListing">
             <?php
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
-                include('./single_product.php');
+                include_once('../dbconnect.php');
+                $query = "select * from Products;";
+                $result = $db->query($query);
+                $num_results = $result->num_rows;
+                for ($i=0; $i <$num_results; $i++) {
+                    $row = $result->fetch_assoc();
+                    includeWithVariables("./single_product.php", array("productRow" => $row));
+                }
             ?>       
         </div>
     </div>
