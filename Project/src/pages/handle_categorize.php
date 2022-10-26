@@ -43,8 +43,13 @@ if (isset($_POST['userId']) && isset($_POST['password'])) {
     }
     include_once('../dbconnect.php');
     $categoryType = $_GET["categoryType"];
+    if ($categoryType=="all") {
+        $query = "select * from Products";
+    }
+    else {
+        $query = "select * from Products where category = '".$categoryType."';";
+    }
     // echo $searchedText;
-    $query = "select * from Products where category = '".$categoryType."';";
     $result = $db->query($query);
     $num_results = $result->num_rows;
     $product_arr = array();
@@ -52,5 +57,5 @@ if (isset($_POST['userId']) && isset($_POST['password'])) {
         $row = $result->fetch_assoc();
         array_push($product_arr,$row);
     }
-    includeWithVariables('./product_listing.php', array("product_arr" => $product_arr, "searchedText" => $searchedText));
+    includeWithVariables('./product_listing.php', array("product_arr" => $product_arr, "searchedText" => $searchedText, "categoryType" => $categoryType));
 ?> 

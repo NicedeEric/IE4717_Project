@@ -52,6 +52,7 @@ function includeWithVariables($filePath, $variables = array(), $print = true) {
 <style>
     .homeBody {
         margin: 100px auto;
+        margin-bottom: 0;
         height: 2000px;
         width: 80%;
         background-color: #f5f5f5;

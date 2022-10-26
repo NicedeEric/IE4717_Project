@@ -9,6 +9,7 @@
 <style>
     .homeBody {
         margin: 100px auto;
+        margin-bottom: 0;
         height: 2000px;
         width: 80%;
         background-color: #f5f5f5;
@@ -52,6 +53,30 @@
         productDivs[i].onclick = function () {
             selectedProductForm.getElementsByTagName("input")[0].value = productDivs[i].id;
             selectedProductForm.submit();
+        }
+    }
+    var allProducts = document.getElementsByClassName("singleProduct");
+    
+    var categoryType = "<?php echo $categoryType; ?>";
+    if (categoryType != "" ) {
+        var selectedLi = document.getElementById(categoryType);
+        selectedLi.style.color = "#00b0ff";
+    }
+    var minPrice = document.getElementById("minPrice");
+    var maxPrice = document.getElementById("maxPrice");
+    var applyPriceFilterButton = document.getElementById("applyPriceFilterButton");
+    console.log(applyPriceFilterButton);
+    applyPriceFilterButton.onclick = function () {
+        console.log(parseInt(minPrice.value));
+        for (let i=0;i<allProducts.length;i++) {
+            productElement = allProducts[i];
+            price = productElement.getElementsByClassName("price")[0].innerHTML.slice(1);
+            if (price<parseInt(minPrice.value) || price>parseInt(maxPrice.value)) {
+                productElement.style.display = "none";
+            }
+            else {
+                productElement.style.display = "inline-block";
+            }
         }
     }
 </script>
