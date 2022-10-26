@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['userId'])) {
+        header('location: sign_in.php?' . SID);
+        exit();
+    }
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

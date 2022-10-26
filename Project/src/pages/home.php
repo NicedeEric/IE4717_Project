@@ -1,11 +1,11 @@
 <?php
 include "dbconnect.php";
 session_start();
-$_SESSION['userId'] = "none";
-if (isset($_POST['userId']) && isset($_POST['password'])) {
+// $_SESSION['userId'] = "none";
+// if (isset($_POST['userId']) && isset($_POST['password'])) {
   // if the user has just tried to log in
-    $userId = $_POST['userId'];
-    $password = $_POST['password'];
+    // $userId = $_POST['userId'];
+    // $password = $_POST['password'];
     // $password = md5($password);
     // $query = 'select * from users '
     //     ."where username='$userid' "
@@ -16,8 +16,8 @@ if (isset($_POST['userId']) && isset($_POST['password'])) {
     //     $_SESSION['userId'] = $userid;    
     // }
     // $dbcnx->close();
-    $_SESSION['userId'] = $userid;
-}
+//     $_SESSION['userId'] = $userid;
+// }
 
 function includeWithVariables($filePath, $variables = array(), $print = true) {
     $output = NULL;

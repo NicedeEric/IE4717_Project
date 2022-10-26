@@ -16,7 +16,7 @@
     <?php
         session_start();
         include '../dbconnect.php';
-        $id = $_SESSION['valid_user'];
+        $id = $_SESSION['userId'];
 
         $sql = "select email from Users where id = '$id';";
         $result = $db->query($sql);

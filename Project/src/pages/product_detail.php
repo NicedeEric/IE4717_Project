@@ -1,23 +1,23 @@
 <?php
     include "../dbconnect.php";
     session_start();
-    $_SESSION['userId'] = "none";
-    if (isset($_POST['userId']) && isset($_POST['password'])) {
-        // if the user has just tried to log in
-        $userId = $_POST['userId'];
-        $password = $_POST['password'];
-        // $password = md5($password);
-        // $query = 'select * from users '
-        //     ."where username='$userid' "
-        //     ." and password='$password'";
-        // $result = $dbcnx->query($query);
-        // if ($result->num_rows >0 ) {
-        //     // if they are in the database register the user id
-        //     $_SESSION['userId'] = $userid;    
-        // }
-        // $dbcnx->close();
-        $_SESSION['userId'] = $userid;
-    }
+    // $_SESSION['userId'] = "none";
+    // if (isset($_POST['userId']) && isset($_POST['password'])) {
+    //     // if the user has just tried to log in
+    //     $userId = $_POST['userId'];
+    //     $password = $_POST['password'];
+    //     // $password = md5($password);
+    //     // $query = 'select * from users '
+    //     //     ."where username='$userid' "
+    //     //     ." and password='$password'";
+    //     // $result = $dbcnx->query($query);
+    //     // if ($result->num_rows >0 ) {
+    //     //     // if they are in the database register the user id
+    //     //     $_SESSION['userId'] = $userid;    
+    //     // }
+    //     // $dbcnx->close();
+    //     $_SESSION['userId'] = $userid;
+    // }
     $productId = $_GET["selectedProductId"];
     $query = "select * from Products where id = ".$productId.";";
     $result = $db->query($query);
@@ -187,8 +187,8 @@
                     <span style="color: #757575; font-size: 16px;" id="productStock"><?php  echo $row["stock"]?> pieces avaiable</span>
                 </div>
                 <div class="productOptions">
-                    <input class="addToCartButton" type="button" value="Add To Cart">
-                    <input class="buyNowButton" type="button" value="Buy Now">
+                    <input class="addToCartButton" type="submit" value="Add To Cart">
+                    <input class="buyNowButton" type="submit" value="Buy Now">
                 </div>
             </div>
         </div>
