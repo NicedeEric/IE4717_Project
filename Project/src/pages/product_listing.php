@@ -69,8 +69,10 @@
         include('./footer.php')
     ?>
 </body>
+<script src="../JS/priceFilter.js"></script>
 <script src="../JS/sortProduct.js"></script>
 <script>
+    // implement category selection 
     var productDivs = document.getElementsByClassName("singleProduct");
     var selectedProductForm = document.getElementById("selectedProductForm");
     for (let i=0;i<productDivs.length;i++) {
@@ -79,29 +81,22 @@
             selectedProductForm.submit();
         }
     }
-    var allProducts = document.getElementsByClassName("singleProduct");
-    
     var categoryType = "<?php echo $categoryType; ?>";
     if (categoryType != "" ) {
         var selectedLi = document.getElementById(categoryType);
         selectedLi.style.color = "#00b0ff";
     }
+
+    // implement price filter
+    var allProducts = document.getElementsByClassName("singleProduct");
     var minPrice = document.getElementById("minPrice");
     var maxPrice = document.getElementById("maxPrice");
     var applyPriceFilterButton = document.getElementById("applyPriceFilterButton");
     applyPriceFilterButton.onclick = function () {
-        for (let i=0;i<allProducts.length;i++) {
-            productElement = allProducts[i];
-            price = productElement.getElementsByClassName("price")[0].innerHTML.slice(1);
-            if (price<parseInt(minPrice.value) || price>parseInt(maxPrice.value)) {
-                productElement.style.display = "none";
-            }
-            else {
-                productElement.style.display = "inline-block";
-            }
-        }
+        priceFilter(allProducts, minPrice, maxPrice);
     }
 
+    // implement sorting
     var sortingBar = document.getElementById("sortingBar");
     var sortOptions = sortingBar.getElementsByTagName("span");
     for (let j=0;j<sortOptions.length;j++) {
