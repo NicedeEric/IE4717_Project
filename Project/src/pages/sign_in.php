@@ -1,12 +1,11 @@
 <?php
-    if (isset($_SESSION['valid_user'])) {
+    session_start();
+    if (isset($_SESSION['userId'])) {
         header('location: home.php?' . SID);
         exit();
     }
     
     include '../dbconnect.php';
-    session_start();
-
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -15,7 +14,7 @@
         $result = $db->query($query);
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $_SESSION['valid_user'] = $row['id'];
+            $_SESSION['userId'] = $row['id'];
             header('location: home.php?' . SID);
         }
         $db->close();

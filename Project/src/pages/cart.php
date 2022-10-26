@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (!isset($_SESSION['valid_user'])) {
+    if (!isset($_SESSION['userId'])) {
         header('location: sign_in.php?' . SID);
         exit();
     }

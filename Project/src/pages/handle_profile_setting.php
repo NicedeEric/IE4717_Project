@@ -30,7 +30,7 @@
         $password = $_POST['password'];
         $password2 = $_POST['password2'];
         $address = $_POST['address'];
-        $id = $_SESSION['valid_user'];
+        $id = $_SESSION['userId'];
         $fail = FALSE;
 
         if ($password != $password2) {
