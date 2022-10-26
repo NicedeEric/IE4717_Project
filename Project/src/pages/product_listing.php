@@ -34,6 +34,7 @@
         text-align: center;
         cursor: pointer;
     }
+
 </style>
 <body style="min-width: 1400px">
     <!-- Header -->
@@ -95,6 +96,8 @@
     applyPriceFilterButton.onclick = function () {
         priceFilter(allProducts, minPrice, maxPrice);
     }
+
+
 
     // implement sorting
     var sortingBar = document.getElementById("sortingBar");
