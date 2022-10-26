@@ -48,6 +48,8 @@ function includeWithVariables($filePath, $variables = array(), $print = true) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/color.css">
+    <link rel="stylesheet" href="../CSS/base.css">
 </head>
 <style>
     .homeBody {
