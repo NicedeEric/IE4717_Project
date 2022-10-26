@@ -29,12 +29,15 @@
     }
     .productName {
         margin-left: 2%;
-        width: 60%;
-        height: 30px;
+        width: 70%;
+        height: 50px;
         font-size: 18px;
-        white-space: nowrap; 
-        overflow:hidden;
-        text-overflow: ellipsis;
+    }
+    .productName p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .price {
         margin-left: 2%;
@@ -57,12 +60,10 @@
                 <?php echo "<img src='".$productRow["img_url"]."'>"?>
             </div>
             <div class="productName">
-                <?php echo $productRow["name"];?>
+                <p><?php echo $productRow["name"];?></p>
             </div>
             <div class="productInfo">
-                <span class="price">
-                    $<?php echo $productRow["price"];?>
-                </span>
+                <span class="price">$<?php echo $productRow["price"];?></span>
                 <span class="category">
                     <?php echo $productRow["category"];?>
                 </span>

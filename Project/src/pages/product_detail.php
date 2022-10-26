@@ -35,7 +35,8 @@
 <style>
     .homeBody {
         margin: 100px auto;
-        height: 2000px;
+        margin-bottom: 0;
+        height: 800px;
         width: 80%;
         background-color: #f5f5f5;
         z-index: 0;
@@ -63,10 +64,19 @@
     }
     .productName {
         width: 90%;
+        height: 50px;
         padding-top: 30px;
         margin: 10px auto;
         font-size: 24px;
     }
+    .productName strong {
+        display: -webkit-box;
+        max-width: 500px;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
     .productPrice {
         width: 90%;
         height: 50px;
