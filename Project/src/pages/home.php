@@ -118,29 +118,32 @@ function includeWithVariables($filePath, $variables = array(), $print = true) {
             </div>
             <div class="categoryType">
                 <ul style="width: 100%; margin: 0 auto;">
-                    <li>
+                    <li id="Mobile Phone">
                         <img src="../img/mobilePhone.png" alt="mobilePhone">
                         <p>Mobile Phone</p>
-                    </li><li>
+                    </li><li id="Laptop">
                         <img src="../img/laptop.png" alt="mobilePhone">
                         <p>Laptop</p>
-                    </li><li>
+                    </li><li id="Tablet">
                         <img src="../img/tablet.png" alt="mobilePhone">
                         <p>Tablet</p>
-                    </li><li>
+                    </li><li id="Earphone">
                         <img src="../img/earphone.png" alt="mobilePhone">
                         <p>Earphone</p>
-                    </li><li>
+                    </li><li id="Monitor">
                         <img src="../img/monitor.png" alt="mobilePhone">
                         <p>Monitor</p>
-                    </li><li>
+                    </li><li id="Game Console">
                         <img src="../img/console.png" alt="mobilePhone">
                         <p>Game Console</p>
-                    </li><li>
+                    </li><li id="Camera">
                         <img src="../img/camera.png" alt="mobilePhone">
                         <p>Camera</p>
                     </li>
                 </ul>
+                <form action="handle_categorize.php" method="GET" id="categorizeForm">
+                    <input type="hidden" name="categoryType" id="categoryType">
+                </form>
             </div>
         </div>
         <div style="height: 50px">
@@ -158,7 +161,10 @@ function includeWithVariables($filePath, $variables = array(), $print = true) {
                     $row = $result->fetch_assoc();
                     includeWithVariables("./single_product.php", array("productRow" => $row));
                 }
-            ?>       
+            ?>    
+            <form action="product_detail.php" method="GET" id="selectedProductForm">
+                <input type="hidden" name="selectedProductId" id="selectedProductId" value="">
+            </form>      
         </div>
     </div>
     <!-- Footer -->
@@ -166,4 +172,24 @@ function includeWithVariables($filePath, $variables = array(), $print = true) {
         include('./footer.php')
     ?>
 </body>
+<script>
+    var productDivs = document.getElementsByClassName("singleProduct");
+    var selectedProductForm = document.getElementById("selectedProductForm");
+    for (let i=0;i<productDivs.length;i++) {
+        productDivs[i].onclick = function () {
+            selectedProductForm.getElementsByTagName("input")[0].value = productDivs[i].id;
+            selectedProductForm.submit();
+        }
+    }
+    var liElements = document.getElementsByTagName('li');
+    var categorizeForm = document.getElementById("categorizeForm");
+    var categoryTypeInput = document.getElementById("categoryType");
+    for (let i=0;i<liElements.length;i++) {
+        let li = liElements[i];
+        li.onclick = function () {
+            categoryTypeInput.value = li.id;
+            categorizeForm.submit();
+        }
+    }
+</script>
 </html>

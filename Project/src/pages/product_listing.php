@@ -34,7 +34,10 @@
                     $productRow = $product_arr[$i];
                     includeWithVariables("./single_product.php", array("productRow" => $productRow));
                 }
-            ?>       
+            ?>    
+            <form action="product_detail.php" method="GET" id="selectedProductForm">
+                <input type="hidden" name="selectedProductId" id="selectedProductId" value="">
+            </form>   
         </div>
     </div>
     <!-- Footer -->
@@ -42,4 +45,14 @@
         include('./footer.php')
     ?>
 </body>
+<script>
+    var productDivs = document.getElementsByClassName("singleProduct");
+    var selectedProductForm = document.getElementById("selectedProductForm");
+    for (let i=0;i<productDivs.length;i++) {
+        productDivs[i].onclick = function () {
+            selectedProductForm.getElementsByTagName("input")[0].value = productDivs[i].id;
+            selectedProductForm.submit();
+        }
+    }
+</script>
 </html>
