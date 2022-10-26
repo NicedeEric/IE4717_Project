@@ -49,21 +49,27 @@
     }
 </style>
 <body>
-    <div class="singleProduct">
-        <div class="productImg">
-            <?php echo "<img src='".$productRow["img_url"]."'>"?>
+    <?php
+        echo "<div class='singleProduct' id='".$productRow['id']."'>"
+    ?>
+        <div>
+            <div class="productImg">
+                <?php echo "<img src='".$productRow["img_url"]."'>"?>
+            </div>
+            <div class="productName">
+                <?php echo $productRow["name"];?>
+            </div>
+            <div class="productInfo">
+                <span class="price">
+                    $<?php echo $productRow["price"];?>
+                </span>
+                <span class="category">
+                    <?php echo $productRow["category"];?>
+                </span>
+            </div>
         </div>
-        <div class="productName">
-            <?php echo $productRow["name"];?>
-        </div>
-        <div class="productInfo">
-            <span class="price">
-                $<?php echo $productRow["price"];?>
-            </span>
-            <span class="category">
-                <?php echo $productRow["category"];?>
-            </span>
-        </div>
-    </div>
+    <?php
+        echo "</div>"
+    ?>
 </body>
 </html>
