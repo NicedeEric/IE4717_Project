@@ -28,7 +28,10 @@
         $message = 'Hi, your purchase is successful. Thank you for shopping with Lawrence Electronics Store Online!';
         mail($to, $subject, $message);
         echo ("Mail sent to : ".$to);
-        unset($_SESSION['cart']);
+
+        if ($_GET['buy_now'] != 1) {
+            unset($_SESSION['cart']);
+        }
     ?>
 
     <br>

@@ -177,6 +177,7 @@
                 <div class="productCategory">
                     <span class="title">category</span>  
                     <?php  echo $row["category"]?></div>
+                <form method="post">
                 <div class="productQuantity">
                     <span class="title">Quantity</span>  
                     <div class="number">
@@ -187,9 +188,10 @@
                     <span style="color: #757575; font-size: 16px;" id="productStock"><?php  echo $row["stock"]?> pieces avaiable</span>
                 </div>
                 <div class="productOptions">
-                    <input class="addToCartButton" type="submit" value="Add To Cart">
-                    <input class="buyNowButton" type="submit" value="Buy Now">
+                    <input class="addToCartButton" type="submit" value="Add To Cart" formaction=<?php echo "cart.php?selectedProductId=" . $productId; ?>>
+                    <input class="buyNowButton" type="submit" value="Buy Now" formaction=<?php echo "handle_buynow.php?selectedProductId=" . $productId; ?>>
                 </div>
+                </form>
             </div>
         </div>
     </div>

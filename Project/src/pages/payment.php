@@ -20,7 +20,8 @@
 </header>
 <div class="content">
     <h1>You need to pay <?php echo number_format($_GET['price'], 2); ?><br></h1>
-    <form action="handle_payment.php">
+    <form action="handle_payment.php" method="get">
+        <input type="hidden" name="buy_now" value=<?php echo isset($_GET['buy_now']); ?> />
         <input type="submit" value="Make payment" />
     </form>
     <br>
