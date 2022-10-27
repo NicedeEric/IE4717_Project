@@ -16,13 +16,11 @@
     <?php
         session_start();
         include '../dbconnect.php';
-        if (isset($_POST['submit'])) {
-            if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['password']) &&
-                empty($_POST['password2']) && empty($_POST['address'])) {
-                echo "Please fill in the records you want to update.";
-                echo "<form action=\"profile_update.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
-                return;
-            }
+        if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['password']) &&
+            empty($_POST['password2']) && empty($_POST['address'])) {
+            echo "Please fill in the records you want to update.";
+            echo "<form action=\"profile_setting.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
+            return;
         }
 
         $username = $_POST['username'];
@@ -35,7 +33,7 @@
 
         if ($password != $password2) {
             echo "Sorry, passwords do not match.";
-            echo "<form action=\"profile_update.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
+            echo "<form action=\"profile_setting.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
             return;
         }
 
@@ -70,7 +68,7 @@
 
         if ($fail) {
             echo "Your query failed.";
-            echo "<form action=\"profile_update.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
+            echo "<form action=\"profile_setting.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
         }
         else {
             echo "Your profile is successfully updated.";

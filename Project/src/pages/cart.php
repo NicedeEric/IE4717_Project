@@ -12,6 +12,13 @@
         header('location:' . $_SERVER['PHP_SELF'] . '?' . SID);
         exit();
     }
+
+    if (isset($_GET['selectedProductId'])) {
+        $productId = $_GET["selectedProductId"];
+        $quantity = $_POST['productQty'];
+        $_SESSION['cart'][] = [$productId, $quantity];
+        header('location:' . $_SERVER['PHP_SELF'] . '?' . SID);
+    }
 ?>
 
 <html lang="en">
@@ -38,6 +45,7 @@
         </thead>
         <tbody>
             <?php
+                include "../dbconnect.php";
                 $total = 0;
                 for ($i = 0; $i < count($_SESSION['cart']); $i++) {
                     $query = "select name, price from Products where id = " . $_SESSION['cart'][$i][0];
@@ -66,10 +74,12 @@
     <form action="home.php">
         <input type="submit" value="Continue shopping" />
     </form>
-    <form action=<?php echo "payment.php?price=" . $total; ?>>
+    <form action="payment.php" method="get">
+        <input type="hidden" name="price" value=<?php echo $total; ?> /> 
         <input type="submit" value="Proceed to payment" />
     </form>
-    <form action="cart.php?empty=1">
+    <form action="cart.php?" method="get">
+        <input type="hidden" name="empty" value=1 />
         <input type="submit" value="Empty your cart" />
     </form>
 </div>
