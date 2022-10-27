@@ -16,6 +16,13 @@
     if (isset($_GET['selectedProductId'])) {
         $productId = $_GET["selectedProductId"];
         $quantity = $_POST['productQty'];
+        for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+            if ($_SESSION['cart'][$i][0] == $productId) {
+                $_SESSION['cart'][$i][1] = $_SESSION['cart'][$i][1] + $quantity;
+                header('location:' . $_SERVER['PHP_SELF'] . '?' . SID);
+                return;
+            }
+        }
         $_SESSION['cart'][] = [$productId, $quantity];
         header('location:' . $_SERVER['PHP_SELF'] . '?' . SID);
     }
@@ -57,7 +64,7 @@
                     echo '<tr>';
                     echo '<td>' . $name . '</td>';
                     echo '<td>' . $qty . '</td>';
-                    echo '<td>' . number_format($price * $qty, 2) . '</td>';
+                    echo '<td>$' . number_format($price * $qty, 2) . '</td>';
                     echo '</tr>';
                     $total = $total + $price * $qty;
                 }
@@ -66,7 +73,7 @@
         <tfoot>
             <tr>
                 <th colspan="2">Total: </th>
-                <th><?php echo number_format($total, 2) ?></th>
+                <th><?php echo "$" . number_format($total, 2); ?></th>
             </tr>
         </tfoot>
     </table>

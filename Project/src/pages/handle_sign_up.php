@@ -15,13 +15,11 @@
 
     <?php
         include '../dbconnect.php';
-        if (isset($_POST['submit'])) {
-            if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) ||
-                empty($_POST['password2']) || empty($_POST['address'])) {
-                echo "All records to be filled in.";
-                echo "<form action=\"sign_up.php\"><input type=\"submit\" value=\"Back to Sign up\" /></form>";
-                return;
-            }
+        if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) ||
+            empty($_POST['password2']) || empty($_POST['address'])) {
+            echo "All records to be filled in.<br><br>";
+            echo "<form action=\"sign_up.php\"><input type=\"submit\" value=\"Back to Sign up\" /></form>";
+            return;
         }
 
         $username = $_POST['username'];
@@ -31,7 +29,7 @@
         $address = $_POST['address'];
 
         if ($password != $password2) {
-            echo "Sorry, passwords do not match.";
+            echo "Sorry, passwords do not match.<br><br>";
             echo "<form action=\"sign_up.php\"><input type=\"submit\" value=\"Back to Sign up\" /></form>";
             return;
         }
@@ -41,11 +39,11 @@
         $result = $db->query($sql);
 
         if (!$result) {
-            echo "Your query failed.";
+            echo "Your query failed.<br><br>";
             echo "<form action=\"sign_up.php\"><input type=\"submit\" value=\"Back to Sign up\" /></form>";
         }
         else {
-            echo "Welcome, " . $username . ", you are now registered.";
+            echo "Welcome, " . $username . ", you are now registered.<br><br>";
         }
     ?>
 

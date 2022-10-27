@@ -27,14 +27,14 @@
         $subject = 'Payment Confirmation';
         $message = 'Hi, your purchase is successful. Thank you for shopping with Lawrence Electronics Store Online!';
         mail($to, $subject, $message);
-        echo ("Mail sent to : ".$to);
+        echo ("Mail sent to : " . $to);
 
         if ($_GET['buy_now'] != 1) {
             unset($_SESSION['cart']);
         }
     ?>
 
-    <br>
+    <br><br>
     <form action="home.php">
         <input type="submit" value="Back to Shopping" />
     </form>
