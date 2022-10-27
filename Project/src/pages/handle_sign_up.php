@@ -31,7 +31,7 @@
         $address = $_POST['address'];
 
         if ($password != $password2) {
-            echo "Sorry, passwords do not match.";
+            echo "Sorry, passwords do not match.<br>";
             echo "<form action=\"sign_up.php\"><input type=\"submit\" value=\"Back to Sign up\" /></form>";
             return;
         }
@@ -41,11 +41,11 @@
         $result = $db->query($sql);
 
         if (!$result) {
-            echo "Your query failed.";
+            echo "Your query failed.<br>";
             echo "<form action=\"sign_up.php\"><input type=\"submit\" value=\"Back to Sign up\" /></form>";
         }
         else {
-            echo "Welcome, " . $username . ", you are now registered.";
+            echo "Welcome, " . $username . ", you are now registered.<br>";
         }
     ?>
 

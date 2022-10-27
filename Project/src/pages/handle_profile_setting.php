@@ -18,7 +18,7 @@
         include '../dbconnect.php';
         if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['password']) &&
             empty($_POST['password2']) && empty($_POST['address'])) {
-            echo "Please fill in the records you want to update.";
+            echo "Please fill in the records you want to update.<br>";
             echo "<form action=\"profile_setting.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
             return;
         }
@@ -32,7 +32,7 @@
         $fail = FALSE;
 
         if ($password != $password2) {
-            echo "Sorry, passwords do not match.";
+            echo "Sorry, passwords do not match.<br>";
             echo "<form action=\"profile_setting.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
             return;
         }
@@ -67,11 +67,11 @@
         }
 
         if ($fail) {
-            echo "Your query failed.";
+            echo "Your query failed.<br>";
             echo "<form action=\"profile_setting.php\"><input type=\"submit\" value=\"Back to Profile update\" /></form>";
         }
         else {
-            echo "Your profile is successfully updated.";
+            echo "Your profile is successfully updated.<br>";
         }
     ?>
 

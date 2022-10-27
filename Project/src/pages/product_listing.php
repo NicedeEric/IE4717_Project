@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lawrence Electronics Shops Online</title>
     <link rel="stylesheet" href="../CSS/color.css">
     <link rel="stylesheet" href="../CSS/base.css">
 </head>
