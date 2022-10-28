@@ -54,8 +54,8 @@
         top: -2px;
     }
     .logo img {
-        width: 30%;
-        height: 20%;
+        width: 100px;
+        height: 70px;
         cursor: pointer;
     }
     .searchBox {
@@ -82,10 +82,10 @@
     }
     .searchButton input {
         position: absolute;
-        top: 8px;
+        top: 9px;
         left: 71%;
-        width: 4%; */
-        height: 200%;
+        width: 37px;
+        height: 37px;
     }
 </style>
 <body>
