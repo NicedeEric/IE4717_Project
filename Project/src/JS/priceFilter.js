@@ -5,8 +5,8 @@ function noDesiredProduct(allProducts) {
         if (allProducts[j].style.display != "none") {
             return false;
         }
-        return true;
     }
+    return true;
 }
 
 function priceFilter (allProducts, minPrice, maxPrice) {
