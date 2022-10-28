@@ -14,12 +14,44 @@
 	<script type="text/javascript" src="">
 	</script>
 </head>
+<style>
+    .homeBody {
+        margin: 100px auto;
+        margin-bottom: 0;
+        height: 1000px;
+        width: 70%;
+        padding: 50px;
+        background-color: #f5f5f5;
+        z-index: 0;
+    }
+    body {
+        min-width:1400px;
+    }
+    .button1 {
+        width: 15%;
+        height: 30px;
+        border: none;
+        color: #fff;
+        background-color: #00b0ff;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .button2 {
+        width: 15%;
+        height: 30px;
+        border: 2px solid #00b0ff;
+        color: #00b0ff;
+        background-color: #DAE9F5;
+        font-size: 15px;
+        cursor: pointer;
+    }
+</style>
 <body>
 <header>
-    <!-- <?php include 'header.php'; ?> -->
+    <?php include_once('./header.php'); ?>
 </header>
-<div class="content">
-    <h1>Please update your profile here<br></h1>
+<div class="homeBody">
+    <h1>Please update your profile here<br><br></h1>
     <form action="handle_profile_setting.php" method='post'>
         <label for="username">New Username:</label><br>
         <input type="text" name="username"><br><br>
@@ -31,18 +63,18 @@
         <input type="password" name="password2"><br><br>
         <label for="address">New Address:</label><br>
         <input type="text" name="address"><br><br>
-        <input type="submit" value="Submit"><br>
+        <input class="button1" type="submit" value="Submit"><br>
     </form>
     <script type = "text/javascript" src = "../JS/form_validator.js">
     </script>
     <br><br>
     <form action="home.php">
-        <input type="submit" value="Back to Homepage" />
+        <input class="button2" type="submit" value="Back to Homepage" />
     </form>
     <br><br>
 </div>
 <footer>
-    <!-- <?php include 'footer.php'; ?> -->
+    <?php include 'footer.php'; ?>
 </footer>
 </body>
 </html>
