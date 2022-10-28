@@ -13,6 +13,7 @@
         margin: 0;
     }
     footer {
+        min-width: 1400px;
         position: relative;
         border-top: 2px solid #00b0ff;
         height: 150px;
