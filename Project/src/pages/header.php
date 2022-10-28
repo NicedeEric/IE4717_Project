@@ -13,7 +13,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        min-width: 1000px;
+        min-width: 1400px;
         height: 100px;
         margin: 0 auto;
         z-index: 1;

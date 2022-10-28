@@ -53,6 +53,8 @@
     .productGallery {
         float: left;
         width: 50%;
+        border: 3px solid #00b0ff;
+        text-align: center;
     }
     .productGallery img{
         width: 80%;
