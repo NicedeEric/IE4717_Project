@@ -36,13 +36,63 @@
 	<script type="text/javascript" src="">
 	</script>
 </head>
+<style>
+    .homeBody {
+        margin: 100px auto;
+        margin-bottom: 0;
+        height: 1000px;
+        width: 70%;
+        padding: 50px;
+        background-color: #f5f5f5;
+        z-index: 0;
+    }
+    body {
+        min-width:1400px;
+    }
+    .button1 {
+        width: 15%;
+        height: 30px;
+        border: none;
+        color: #fff;
+        background-color: #00b0ff;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .button2 {
+        width: 15%;
+        height: 30px;
+        border: 2px solid #00b0ff;
+        color: #00b0ff;
+        background-color: #DAE9F5;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    #cart {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+    }
+    #cart td, #cart th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    #cart tr:nth-child(even) {background-color: #f2f2f2;}
+    #cart tr:hover {background-color: #ddd;}
+    #cart th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #3115ad;
+        color: white;
+    }
+</style>
 <body>
 <header>
-    <!-- <?php include 'header.php'; ?> -->
+    <?php include_once('./header.php'); ?>
 </header>
-<div class="content">
-    <h1>Your Shopping Cart<br></h1>
-    <table>
+<div class="homeBody">
+    <h1>Your Shopping Cart<br><br></h1>
+    <table id="cart">
         <thead>
             <tr>
                 <th>Item</th>
@@ -79,19 +129,21 @@
     </table>
     <br><br>
     <form action="home.php">
-        <input type="submit" value="Continue shopping" />
+        <input class="button2" type="submit" value="Continue shopping" />
     </form>
+    <br>
     <form action="payment.php" method="get">
         <input type="hidden" name="price" value=<?php echo $total; ?> /> 
-        <input type="submit" value="Proceed to payment" />
+        <input class="button1" type="submit" value="Proceed to payment" /><br>
     </form>
+    <br>
     <form action="cart.php?" method="get">
         <input type="hidden" name="empty" value=1 />
-        <input type="submit" value="Empty your cart" />
+        <input class="button2" type="submit" value="Empty your cart" />
     </form>
 </div>
 <footer>
-    <!-- <?php include 'footer.php'; ?> -->
+    <?php include 'footer.php'; ?>
 </footer>
 </body>
 </html>
