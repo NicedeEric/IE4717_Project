@@ -50,7 +50,7 @@
     .logo {
         position: absolute;
         width: 20%;
-        left: 8%;
+        left: 10%;
         top: -2px;
     }
     .logo img {
@@ -60,15 +60,15 @@
     }
     .searchBox {
         position: absolute;
-        width: 75%;
-        left: 18%;
+        width: 80%;
+        left: 20%;
     }
     .searchButton {
         width: 100%;
     }
     .cart {
         position: absolute;
-        left: 83%;
+        left: 85%;
         cursor: pointer;
     }
     .searchBar div {
