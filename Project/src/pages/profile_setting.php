@@ -19,10 +19,12 @@
         margin: 100px auto;
         margin-bottom: 0;
         height: 1000px;
-        width: 70%;
-        padding: 50px;
+        width: 80%;
         background-color: #f5f5f5;
         z-index: 0;
+    }
+    .content {
+        padding: 50px;
     }
     body {
         min-width:1400px;
@@ -51,6 +53,7 @@
     <?php include_once('./header.php'); ?>
 </header>
 <div class="homeBody">
+<div class="content">
     <h1>Please update your profile here<br><br></h1>
     <form action="handle_profile_setting.php" method='post'>
         <label for="username">New Username:</label><br>
@@ -72,6 +75,7 @@
         <input class="button2" type="submit" value="Back to Homepage" />
     </form>
     <br><br>
+</div>
 </div>
 <footer>
     <?php include 'footer.php'; ?>
