@@ -11,10 +11,12 @@
         margin: 100px auto;
         margin-bottom: 0;
         height: 1000px;
-        width: 70%;
-        padding: 50px;
+        width: 80%;
         background-color: #f5f5f5;
         z-index: 0;
+    }
+    .content {
+        padding: 50px;
     }
     body {
         min-width:1400px;
@@ -34,6 +36,7 @@
     <?php include_once('./header.php'); ?>
 </header>
 <div class="homeBody">
+<div class="content">
     <h1>Payment confirmation<br><br></h1>
 
     <?php
@@ -62,6 +65,7 @@
         <input class="button1" type="submit" value="Back to Shopping" />
     </form>
     <br><br>
+</div>
 </div>
 <footer>
     <?php include 'footer.php'; ?>

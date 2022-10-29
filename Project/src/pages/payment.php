@@ -19,10 +19,12 @@
         margin: 100px auto;
         margin-bottom: 0;
         height: 1000px;
-        width: 70%;
-        padding: 50px;
+        width: 80%;
         background-color: #f5f5f5;
         z-index: 0;
+    }
+    .content {
+        padding: 50px;
     }
     body {
         min-width:1400px;
@@ -51,6 +53,7 @@
     <?php include_once('./header.php'); ?>
 </header>
 <div class="homeBody">
+<div class="content">
     <h1>You need to pay $<?php echo number_format($_GET['price'], 2); ?><br><br></h1>
     <form action="handle_payment.php" method="get">
         <input type="hidden" name="buy_now" value=<?php echo isset($_GET['buy_now']); ?> />
@@ -60,6 +63,7 @@
     <form action="cart.php">
         <input class="button2" type="submit" value="Back to cart" />
     </form>
+</div>
 </div>
 <footer>
     <?php include 'footer.php'; ?>

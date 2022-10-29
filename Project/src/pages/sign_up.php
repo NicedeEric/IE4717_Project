@@ -34,10 +34,12 @@
         margin: 100px auto;
         margin-bottom: 0;
         height: 1000px;
-        width: 70%;
-        padding: 50px;
+        width: 80%;
         background-color: #f5f5f5;
         z-index: 0;
+    }
+    .content {
+        padding: 50px;
     }
     body {
         min-width:1400px;
@@ -68,6 +70,7 @@
     ?>
 </header>
 <div class="homeBody">
+<div class="content">
     <h1>Please sign up here<br><br></h1>
     <form action="handle_sign_up.php" method='post'>
         <label for="username">Username:</label><br>
@@ -88,6 +91,7 @@
         <input class="button2" type="submit" value="Go to Login" />
     </form>
     <br><br>
+</div>
 </div>
 <footer>
     <?php
