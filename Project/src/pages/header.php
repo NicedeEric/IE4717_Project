@@ -103,7 +103,7 @@
                     else {
                         echo "<a href='logout.php'><span>Sign Out</span></a>";
                         echo "<a href='cart.php'><span>Shopping Cart</span></a>";
-                        echo "<a href='profile_setting.php'><span>My Account</span></a>";
+                        echo "<a href='profile.php'><span>My Account</span></a>";
                     }
                 ?>    
             </div>

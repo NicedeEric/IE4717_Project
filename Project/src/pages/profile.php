@@ -4,6 +4,13 @@
         header('location: sign_in.php?' . SID);
         exit();
     }
+    else {
+        include "../dbconnect.php";
+        $userId = $_SESSION['userId'];
+        $query = "select * from Users where id = ".$userId.";";
+        $result = $db->query($query);
+        $row =$result->fetch_assoc();
+    }
 ?>
 
 <html lang="en">
@@ -46,6 +53,14 @@
         font-size: 15px;
         cursor: pointer;
     }
+    .content span {
+        font-size: 24px;
+    }
+    label {
+        font-size: 24px;
+        color: #777;
+    }
+
 </style>
 <body>
 <header>
@@ -54,26 +69,17 @@
 <div class="homeBody">
 <div style="height: 50px;"></div>
 <div class="content">
-    <h1>Please update your profile here<br><br></h1>
-    <form action="handle_profile_setting.php" method='post'>
-        <label for="username">New Username:</label><br>
-        <input type="text" name="username"><br><br>
-        <label for="email">New Email:</label><br>
-        <input type="email" name="email" id="email"><br><br>
-        <label for="password">New Password:</label><br>
-        <input type="password" name="password" id="password"><br><br>
-        <label for="password2">New Password Confirmation:</label><br>
-        <input type="password" name="password2"><br><br>
-        <label for="address">New Address:</label><br>
-        <input type="text" name="address"><br><br><br><br>
-        <input class="button1" type="submit" value="Submit"><br>
+    <h1>Your Profile<br><br></h1>
+    <form action="profile_setting.php" method='post'>
+        <label for="username">Username:</label>
+        <span type="text" name="username"><?php echo $row["username"]?></span><br><br>
+        <label for="email">Email:</label>
+        <span type="email" name="email" id="email"><?php echo $row["email"]?></span><br><br>
+        <label for="address">Address:</label>
+        <span type="text" name="address"><?php echo $row["address"]?></span><br><br><br><br>
+        <input class="button1" type="submit" value="Update Profile"><br>
     </form>
-    <script type = "text/javascript" src = "../JS/form_validator.js">
-    </script>
     <br><br>
-    <form action="profile.php">
-        <input class="button2" type="submit" value="Cancel" />
-    </form>
     <br><br>
 </div>
 </div>

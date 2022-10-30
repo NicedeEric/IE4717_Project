@@ -24,4 +24,15 @@ VALUES ('Sony Playstation 5 Console - Blu-Ray CFI-1118A 01', 949.00, 'Game Conso
 INSERT INTO Products (name, price, category, stock, img_url) 
 VALUES ('OLYMPUS Tough TG-6 Waterproof Camera, Black', 460.00, 'Camera', 10, '../img/product8.png')
 
+INSERT INTO Products (name, price, category, stock, img_url) 
+VALUES ('2022 Apple MacBook Air laptop with M2 chip: 13.6-inch Liquid Retina display, 8GB RAM, 512GB SSD storage, backlit keyboard, 1080p FaceTime HD camera. Works with iPhone and iPad; Space Grey', 2029.00, 'Laptop', 10, '../img/product9.png')
+
+INSERT INTO Products (name, price, category, stock, img_url) 
+VALUES ('Acer R240Y 23.8 Inches IPS FHD Resolution monitor with 1 MS Response Time,Silver', 151.47, 'Monitor', 10, '../img/product10.png')
+
+INSERT INTO Products (name, price, category, stock, img_url) 
+VALUES ('Apple AirPods Pro (2nd generation)', 338.00, 'Earphone', 10, '../img/product11.png')
+
+INSERT INTO Products (name, price, category, stock, img_url) 
+VALUES ('Apple AirPods Max - Sky Blue', 757.00, 'Earphone', 10, '../img/product12.png')
 

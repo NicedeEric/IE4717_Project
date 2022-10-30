@@ -10,9 +10,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Lawrence Electronics Shops Online - Payment Page</title>
-    <link rel="stylesheet" href="stylesheet.css">
-	<script type="text/javascript" src="">
-	</script>
 </head>
 <style>
     .homeBody {
