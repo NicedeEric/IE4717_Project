@@ -108,12 +108,16 @@
                 include "../dbconnect.php";
                 $total = 0;
                 for ($i = 0; $i < count($_SESSION['cart']); $i++) {
-                    $query = "select name, price from Products where id = " . $_SESSION['cart'][$i][0];
+                    $query = "select name, price, stock from Products where id = " . $_SESSION['cart'][$i][0];
                     $result = $db->query($query);
                     $row = $result->fetch_assoc();
                     $name = $row['name'];
                     $price = $row['price'];
+                    $stock = $row['stock'];
                     $qty = $_SESSION['cart'][$i][1];
+                    if ($qty > $stock) {
+                        $qty = $stock;
+                    }
                     echo '<tr>';
                     echo '<td>' . $name . '</td>';
                     echo '<td>' . $qty . '</td>';
