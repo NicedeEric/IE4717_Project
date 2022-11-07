@@ -40,14 +40,17 @@
 </style>
 <body>
 <header>
-    <?php include_once('./header.php'); ?>
+    <?php 
+        session_start();
+        include_once('./header.php'); 
+    ?>
 </header>
 <div class="homeBody">
 <div class="content">
     <h1>Your profile update status<br><br></h1>
 
     <?php
-        session_start();
+        
         include '../dbconnect.php';
         if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['password']) &&
             empty($_POST['password2']) && empty($_POST['address'])) {
